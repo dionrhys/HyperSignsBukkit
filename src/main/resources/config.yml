@@ -1,0 +1,13 @@
+#  
+# HyperSigns Configuration File
+# -----------------------------
+#  
+# - fallbackUrlTriggerPrefix:
+#   Prefix to use in chat before URL for players without the HyperSigns client.
+#  
+# - fallbackUrlTriggerSuffix:
+#   Suffix to use in chat after URL for players without the HyperSigns client.
+#  
+
+fallbackUrlTriggerPrefix: '§d*Server* '
+fallbackUrlTriggerSuffix: ''

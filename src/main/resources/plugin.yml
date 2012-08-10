@@ -1,0 +1,30 @@
+name: HyperSignsBukkit
+version: 1.0
+author: Didz
+description: Server-side plugin for extended in-game sign interaction.
+website: http://www.enderville.com/
+main: com.enderville.hypersignsbukkit.HyperSignsBukkit
+
+commands:
+  url:
+    description: Prompt an online player to visit a URL.
+    permission: hypersigns.command.url
+    usage: "Usage: <command> <player> <URL>"
+
+  signurl:
+    description: Prepare to set or remove a sign's link.
+    permission: hypersigns.command.signurl
+    usage: "Usage: <command> [URL] (Leave out the URL to remove a sign's link)"
+
+permissions:
+  hypersigns.command.url:
+    description: Gives permission to use the /url command.
+    default: op
+
+  hypersigns.command.signurl:
+    description: Gives permission to use the /signurl command.
+    default: op
+
+  hypersigns.sign.interact:
+    description: Gives permission to interact with a hypersign.
+    default: op
