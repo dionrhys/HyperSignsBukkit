@@ -33,6 +33,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
@@ -54,7 +55,7 @@ import org.json.simple.parser.ParseException;
 
 public class HyperSignsBukkit extends JavaPlugin {
 
-	protected static final String CHANNEL_NAME = "HyperSigns1";
+	protected static final String CHANNEL_NAME = "HyperSigns";
 	protected Logger log;
 	protected PluginManager pm;
 	private EventListener eventListener;
@@ -134,7 +135,13 @@ public class HyperSignsBukkit extends JavaPlugin {
 	protected void sendUrlTrigger(Player recipient, URL url) {
 		// Check if the player has the custom client
 		if (recipient.getListeningPluginChannels().contains(CHANNEL_NAME)) {
-			byte[] message = ServerMessageComposer.writeClientUrlTrigger(url);
+			byte[] message;
+			try {
+				message = ServerMessageComposer.writeClientUrlTrigger(url);
+			} catch (IOException e) {
+				log.log(Level.SEVERE, "Unable to create URL Trigger packet.", e);
+				return;
+			}
 			recipient.sendPluginMessage(this, CHANNEL_NAME, message);
 		} else {
 			recipient.sendMessage(fallbackUrlTriggerPrefix + url.toString()

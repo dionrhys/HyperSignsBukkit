@@ -19,6 +19,7 @@
 package com.enderville.hypersignsbukkit;
 
 import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.URL;
 
@@ -52,22 +53,19 @@ public class ServerMessageComposer {
 	 * 
 	 * @param url
 	 * @return The message as a byte array. null on failure.
+	 * @throws IOException
 	 */
-	public static byte[] writeClientUrlTrigger(URL url) {
-		ByteArrayOutputStream message = new ByteArrayOutputStream();
+	public static byte[] writeClientUrlTrigger(URL url) throws IOException {
+		ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+		DataOutputStream data = new DataOutputStream(byteArray);
 
 		// Prefix the message with the URL_TRIGGER identifier
-		message.write(MessageType.URL_TRIGGER.getValue());
+		data.writeByte(MessageType.URL_TRIGGER.getValue());
 
 		// Append the message with the URL
-		try {
-			message.write(url.toString().getBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
+		data.writeUTF(url.toString());
 
-		return message.toByteArray();
+		return byteArray.toByteArray();
 	}
 
 }
