@@ -58,8 +58,8 @@ public class EventListener implements Listener {
 			return;
 		}
 
-		// Ignore the event if it wasn't a right click on a block
-		if (event.getAction() != Action.RIGHT_CLICK_BLOCK) {
+		// Ignore the event if it wasn't a block click
+		if (event.getAction() != Action.LEFT_CLICK_BLOCK && event.getAction() != Action.RIGHT_CLICK_BLOCK) {
 			return;
 		}
 
