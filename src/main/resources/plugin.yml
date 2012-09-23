@@ -2,8 +2,8 @@ name: HyperSignsBukkit
 version: 1.1
 author: Didz
 description: Server-side plugin for extended in-game sign interaction.
-website: http://www.enderville.com/
-main: com.enderville.hypersignsbukkit.HyperSignsBukkit
+website: http://didz.co.uk/
+main: uk.co.didz.hypersignsbukkit.HyperSignsBukkit
 
 commands:
   url:

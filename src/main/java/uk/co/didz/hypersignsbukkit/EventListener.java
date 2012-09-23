@@ -1,6 +1,6 @@
 /**
  * HyperSignsBukkit - Bukkit plugin for extended in-game sign interaction.
- * Copyright (C) 2012, EnderVille.com
+ * Copyright (C) 2012, Dion Williams
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.enderville.hypersignsbukkit;
+package uk.co.didz.hypersignsbukkit;
 
 import java.net.URL;
 
